@@ -106,7 +106,6 @@
             100% { background-position: 0%; }
         }
 
-        
         /* Navbar */
         .navbar {
             display: flex;
@@ -121,7 +120,6 @@
             will-change: transform;
         }
 
-        
         .logo {
             /*font-size: 2.5rem;
             /*font-weight: 800;
@@ -461,285 +459,6 @@
         <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
     </nav>
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GOJA Dashboard</title>
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      margin: 20px;
-    }
-    .section.dashboard {
-      max-width: 1200px;
-      margin: auto;
-    }
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .col-lg-12 {
-      width: 100%;
-    }
-    .col-xxl-4 {
-      flex: 1 1 calc(33.333% - 20px);
-      min-width: 280px;
-    }
-    .col-xl-12 {
-      flex: 1 1 100%;
-    }
-    .col-md-6 {
-      flex: 1 1 calc(50% - 20px);
-      min-width: 280px;
-    }
-    .card.info-card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .card-body {
-      display: flex;
-      flex-direction: column;
-    }
-    h5.card-title {
-      margin-bottom: 15px;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #333;
-    }
-    .d-flex {
-      display: flex;
-      align-items: center;
-    }
-    .card-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 28px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-right: 15px;
-      color: white;
-    }
-    .alert-primary {
-      background-color: #0d6efd;
-    }
-    .alert-info {
-      background-color: #0dcaf0;
-    }
-    .alert-warning {
-      background-color: #ffc107;
-      color: #212529;
-    }
-    .alert-success {
-      background-color: #198754;
-    }
-    .ps-3 {
-      padding-left: 1rem;
-    }
-    .weight-700 {
-      font-weight: 700;
-    }
-    .font-24 {
-      font-size: 24px;
-    }
-    .text-dark {
-      color: #212529;
-    }
-    .font-14 {
-      font-size: 14px;
-    }
-    .text-secondary {
-      color: #6c757d;
-    }
-    .weight-500 {
-      font-weight: 500;
-    }
-    .text-muted {
-      color: #6c757d;
-    }
-    .small {
-      font-size: 0.875rem;
-    }
-    .pt-2 {
-      padding-top: 0.5rem;
-    }
-    .ps-1 {
-      padding-left: 0.25rem;
-    }
-
-    /* Responsive */
-    @media(max-width: 768px) {
-      .col-xxl-4, .col-md-6 {
-        flex: 1 1 100%;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <main id="main" class="main">
-    <section class="section dashboard">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="content-wrapper text-center col-xxl-4 col-xl-12"></div>
-
-            <!-- Clock Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card">
-                <div class="card-body">
-                  <h5 class="card-title">Clock</h5>
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon alert-primary rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-clock"></i>
-                    </div>
-                    <div class="ps-3">
-                      <div class="weight-700 font-24 text-dark" id="browser_info">--:--:--</div>
-                      <div class="font-14 text-secondary weight-500" id="browser_sholat">Local Time</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Today Visitors -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card">
-                <div class="card-body">
-                  <h5 class="card-title">Today Visitors</h5>
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon alert-info rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-eye"></i>
-                    </div>
-                    <div class="ps-3">
-                      <div class="weight-700 font-24 text-dark" id="visitor-count-sula">0</div>
-                      <div class="font-14 text-secondary weight-500">Today Requests</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Total Visitors -->
-            <div class="col-xxl-4 col-xl-12">
-              <div class="card info-card">
-                <div class="card-body">
-                  <h5 class="card-title">Total Visitors</h5>
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon alert-warning rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bar-chart-fill"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6><span id="total-requests-sula">0</span></h6>
-                      <span class="text-muted small pt-2 ps-1">Total All Request</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Battery Info -->
-            <div class="col-xxl-4 col-xl-12">
-              <div class="card info-card">
-                <div class="card-body">
-                  <h5 class="card-title">Battery Info</h5>
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon alert-success rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-battery-full"></i>
-                    </div>
-                    <div class="ps-3">
-                      <div class="weight-700 font-24 text-dark" id="battery-level">--%</div>
-                      <div class="font-14 text-secondary weight-500" id="charging-status">Unknown</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Footer / Branding -->
-            <div class="col-xxl-4 col-xl-12">
-              <a href="#" class="card-box d-block mx-auto pd-20 text-secondary" style="text-decoration:none;">
-                <div class="card-body text-center">
-                  <strong><i class="bi bi-people-fill"></i>  𝐒𝐔𝐋𝐀𝐊𝐒𝐇𝐀 𝐌𝐀𝐃𝐀𝐑𝐀</strong>
-                  <div class="row">
-                    <div class="col-auto">
-                      <ul style="list-style:none; padding-left:0;">
-                        <li></li>
-                        <li></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script>
-    // Clock update every second
-    function updateClock() {
-      const now = new Date();
-      const timeString = now.toLocaleTimeString();
-      document.getElementById('browser_info').textContent = timeString;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-
-    // Battery API
-    if ('getBattery' in navigator) {
-      navigator.getBattery().then(battery => {
-        function updateBatteryInfo() {
-          const levelPercent = Math.round(battery.level * 100) + '%';
-          const chargingStatus = battery.charging ? 'Charging' : 'Not Charging';
-
-          document.getElementById('battery-level').textContent = levelPercent;
-          document.getElementById('charging-status').textContent = chargingStatus;
-
-          // Color icon based on battery
-          const icon = document.querySelector('.bi-battery-full');
-          if (battery.charging) {
-            icon.style.color = 'green';
-          } else if (battery.level <= 0.2) {
-            icon.style.color = 'red';
-          } else {
-            icon.style.color = 'orange';
-          }
-        }
-
-        updateBatteryInfo();
-
-        battery.addEventListener('chargingchange', updateBatteryInfo);
-        battery.addEventListener('levelchange', updateBatteryInfo);
-      });
-    } else {
-      // Not supported
-      document.getElementById('battery-level').textContent = 'N/A';
-      document.getElementById('charging-status').textContent = 'Battery info not supported';
-    }
-
-    // Dummy visitor count updates (for example only)
-    let todayVisitors = 123; // Replace with real data source
-    let totalVisitors = 4567; // Replace with real data source
-
-    document.getElementById('visitor-count-sula').textContent = todayVisitors;
-    document.getElementById('total-requests-sula').textContent = totalVisitors;
-
-  </script>
-</body>
-</html>
     <!-- Hero Section -->
     <section class="hero">
         <img src="https://i.ibb.co/yrfrysf/e9d554bc507d5904.jpg">
@@ -752,6 +471,103 @@
         </div>
     </section>
 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gojo Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    .main {
+      padding: 20px;
+      background: #f1f1f1;
+    }
+    .card-icon {
+      width: 50px;
+      height: 50px;
+    }
+    .weight-700 {
+      font-weight: 700;
+    }
+    .font-24 {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+<main id="main" class="main">
+  <section class="section dashboard">
+    <div class="row justify-content-center">
+      <!-- Clock Card -->
+      <div class="col-xxl-4 col-md-6">
+        <div class="card info-card">
+          <div class="card-body">
+            <h5 class="card-title">Clock</h5>
+            <div class="d-flex align-items-center">
+              <div class="card-icon alert alert-primary rounded-circle d-flex align-items-center justify-content-center">
+                <i class="bi bi-clock"></i>
+              </div>
+              <div class="ps-3">
+                <div class="weight-700 font-24 text-dark" id="browser_info">00:00:00</div>
+                <div class="font-14 text-secondary weight-500" id="browser_date"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Battery Card -->
+      <div class="col-xxl-4 col-md-6">
+        <div class="card info-card">
+          <div class="card-body">
+            <h5 class="card-title">Battery Info</h5>
+            <div class="d-flex align-items-center">
+              <div class="card-icon alert alert-success rounded-circle d-flex align-items-center justify-content-center">
+                <i class="bi bi-battery-full"></i>
+              </div>
+              <div class="ps-3">
+                <div class="weight-700 font-24 text-dark" id="battery-level">%</div>
+                <div class="font-14 text-secondary weight-500" id="charging-status">Checking...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  // Clock Function
+  function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString();
+    const date = now.toDateString();
+    document.getElementById("browser_info").textContent = time;
+    document.getElementById("browser_date").textContent = date;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Battery Info Function
+  if ('getBattery' in navigator) {
+    navigator.getBattery().then(function(battery) {
+      function updateBattery() {
+        document.getElementById("battery-level").textContent = Math.round(battery.level * 100) + "%";
+        document.getElementById("charging-status").textContent = battery.charging ? "Charging" : "Not Charging";
+      }
+      updateBattery();
+      battery.addEventListener('levelchange', updateBattery);
+      battery.addEventListener('chargingchange', updateBattery);
+    });
+  } else {
+    document.getElementById("battery-level").textContent = "Not supported";
+    document.getElementById("charging-status").textContent = "Unavailable";
+  }
+</script>
+</body>
+</html>
     <!-- Centered Card Section -->
     <div class="card-container">
         <div class="card">
